@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/bk_text"
+
+    android:layout_margin="5dp">
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@android:drawable/ic_menu_delete"
+        android:id="@+id/delete"/>
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        app:layout_constraintRight_toLeftOf="@+id/delete"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@android:drawable/ic_menu_edit"
+        android:id="@+id/validate"
+        android:layout_marginLeft="0dp"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order ID :"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/saudi"/>
+    <TextView
+        android:id="@+id/order_nb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#563468465654"
+        app:layout_constraintLeft_toRightOf="@+id/t1"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/saudi"/>
+
+
+
+    <TextView
+        android:layout_marginLeft="10dp"
+    android:id="@+id/t3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name :"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/t1"
+    android:fontFamily="@font/saudi"/>
+    <TextView
+        android:id="@+id/prod_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 1"
+        app:layout_constraintLeft_toRightOf="@+id/t3"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/t1"
+        android:fontFamily="@font/saudi"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/t4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status :"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t3"
+        android:fontFamily="@font/saudi"/>
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintLeft_toRightOf="@+id/t4"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/t3"
+        android:fontFamily="@font/saudi"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300 $"
+        android:textSize="22dp"
+        android:background="@drawable/bk_order_price"
+        android:padding="10dp"
+       app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="#ffff"
+        android:layout_marginRight="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/t4"
+        android:fontFamily="@font/saudi"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:background="#F1F0F0">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent">
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <android.support.constraint.ConstraintLayout
+             app:layout_constraintTop_toTopOf="parent"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+
+              android:layout_margin="5dp"
+              android:padding="0dp"
+              android:id="@+id/add_cl">
+<ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:padding="10dp"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:src="@android:drawable/ic_menu_rotate"
+    android:id="@+id/refresh"/>
+              <TextView
+                  android:id="@+id/t1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:fontFamily="@font/saudi"
+                  android:text="ADD Order"
+                  android:textColor="#277C03"
+                  android:textSize="18dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent" />
+
+
+              <TextView
+                  android:layout_marginRight="10dp"
+                  android:id="@+id/t33"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/t1"
+                  app:layout_constraintLeft_toLeftOf="parent"
+
+                  android:text="Name :"
+                  android:fontFamily="@font/saudi"
+
+                  android:textColor="#3F51B5"
+                  android:layout_marginTop="10dp"/>
+
+              <EditText
+                  android:id="@+id/prod_name"
+                  android:layout_width="200dp"
+                  android:gravity="right"
+                  android:layout_marginLeft="10dp"
+                  android:layout_height="wrap_content"
+
+                  app:layout_constraintTop_toBottomOf="@+id/t1"
+                  app:layout_constraintLeft_toRightOf="@+id/t33"
+
+                  android:hint=""
+                  android:fontFamily="@font/saudi"
+
+                  android:textColor="#3F51B5"/>
+              <EditText
+                  android:id="@+id/status"
+                  android:layout_width="200dp"
+                  android:gravity="right"
+                  android:layout_marginLeft="10dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/t33"
+                  app:layout_constraintLeft_toRightOf="@+id/t4"
+
+
+                  android:fontFamily="@font/saudi"
+                />
+              <TextView
+                  android:layout_marginRight="10dp"
+                  android:id="@+id/t4"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/t33"
+                  android:layout_marginTop="10dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+
+                  android:text="Status"
+                  android:fontFamily="@font/saudi"
+                />
+
+              <EditText
+                  android:id="@+id/price"
+                  android:layout_width="200dp"
+                  android:gravity="right"
+                  android:layout_marginLeft="10dp"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/t4"
+                  app:layout_constraintLeft_toRightOf="@+id/t5"
+
+                  android:digits="1234567890."
+
+                  android:fontFamily="@font/saudi"
+
+                  android:textColor="#E91E63"/>
+              <TextView
+                  android:layout_marginRight="10dp"
+                  android:id="@+id/t5"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@+id/t4"
+                  android:layout_marginTop="10dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+
+                  android:text="Price :"
+                  android:fontFamily="@font/saudi"
+                 />
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:weightSum="2"
+                  android:orientation="horizontal"
+                  app:layout_constraintTop_toBottomOf="@+id/t5"
+                  android:layout_marginTop="20dp">
+                  <Button
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:id="@+id/save"
+                      android:text="Save"
+                      android:fontFamily="@font/saudi"
+                      android:textSize="22dp"/>
+                  <Button
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:id="@+id/cancel"
+                      android:text="Cancel"
+                      android:fontFamily="@font/saudi"
+                      android:textSize="22dp"/>
+
+              </LinearLayout>
+          </android.support.constraint.ConstraintLayout>
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="#FF5722"
+              app:layout_constraintTop_toBottomOf="@+id/add_cl"
+              android:layout_marginTop="10dp"
+              app:layout_constraintRight_toRightOf="parent"
+              android:id="@+id/line2"/>
+
+
+          <ScrollView
+              app:layout_constraintTop_toBottomOf="@+id/line2"
+              app:layout_constraintRight_toRightOf="parent"
+              android:layout_width="match_parent"
+              android:paddingBottom="50dp"
+              android:layout_height="match_parent">
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+                  <TextView
+                      android:id="@+id/noItem"
+                      android:visibility="gone"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="noItem"
+                      android:fontFamily="@font/saudi"
+                      android:textSize="20dp"
+                      android:layout_centerInParent="true"
+                      android:layout_alignParentTop="true"
+                      android:layout_marginTop="20dp"/>
+                  <ProgressBar
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_centerInParent="true"
+                      android:layout_alignParentTop="true"
+                      android:layout_marginTop="10dp"
+                      android:id="@+id/progress"
+
+                      />
+
+                  <android.support.v7.widget.RecyclerView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:id="@+id/RV"
+                      android:layout_marginBottom="100dp"></android.support.v7.widget.RecyclerView>
+
+              </RelativeLayout>
+          </ScrollView>
+      </android.support.constraint.ConstraintLayout>
+   </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
