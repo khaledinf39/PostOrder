@@ -21,6 +21,8 @@ private RecyclerView RV;
 private EditText name,price,status;
 Button save,cancel;
 ImageView refresh;
+    boolean existedata=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +31,11 @@ ImageView refresh;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                findViewById(R.id.progress).setVisibility(View.GONE);
-                findViewById(R.id.noItem).setVisibility(View.VISIBLE);
+                if (!existedata){
+                    findViewById(R.id.progress).setVisibility(View.GONE);
+                    findViewById(R.id.noItem).setVisibility(View.VISIBLE);
 
+                }
 
             }
         }, 5000);
@@ -102,15 +106,18 @@ ImageView refresh;
                 if (status!=200){
                     findViewById(R.id.progress).setVisibility(View.GONE);
                     findViewById(R.id.noItem).setVisibility(View.VISIBLE);
+                    existedata=false;
                 }else {
                     findViewById(R.id.progress).setVisibility(View.GONE);
                     findViewById(R.id.noItem).setVisibility(View.GONE);
+                    existedata=true;
+
                 }
             }
 
             @Override
             public void onSuccess(List<Request> data) {
-                
+
                 adapter=new Requestes_adapter(MainActivity.this, data,
                         new Requestes_adapter.onEditeListenner() {
                             @Override
