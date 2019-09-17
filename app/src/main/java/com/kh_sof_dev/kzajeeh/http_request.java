@@ -30,7 +30,7 @@ void onSuccess(List<com.kh_sof_dev.kzajeeh.Request> data);
     public void Post_add(final Context mcontext, final com.kh_sof_dev.kzajeeh.Request request, final OnCoupon_lisennter listener){
         listener.onStart();
         RequestQueue queue = Volley.newRequestQueue(mcontext);  // this = context
-        String url = "http://zabeb.com/regestration.php";
+        String url = "http://zabeb.com/kzajeeh/regestration.php";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
@@ -86,7 +86,7 @@ void onSuccess(List<com.kh_sof_dev.kzajeeh.Request> data);
     public void Post_update(final Context mcontext, final com.kh_sof_dev.kzajeeh.Request request, final OnCoupon_lisennter listener){
         listener.onStart();
         RequestQueue queue = Volley.newRequestQueue(mcontext);  // this = context
-        String url = "http://zabeb.com/update.php";
+        String url = "http://zabeb.com/kzajeeh/update.php";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
@@ -143,7 +143,7 @@ void onSuccess(List<com.kh_sof_dev.kzajeeh.Request> data);
     public void Post_delete(final Context mcontext, final com.kh_sof_dev.kzajeeh.Request request, final OnCoupon_lisennter listener){
         listener.onStart();
         RequestQueue queue = Volley.newRequestQueue(mcontext);  // this = context
-        String url = "http://zabeb.com/delete.php";
+        String url = "http://zabeb.com/kzajeeh/delete.php";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
@@ -197,7 +197,54 @@ void onSuccess(List<com.kh_sof_dev.kzajeeh.Request> data);
     public void Post_fetch(final Context mcontext, final com.kh_sof_dev.kzajeeh.Request request, final OnCoupon_lisennter listener){
         listener.onStart();
         RequestQueue queue = Volley.newRequestQueue(mcontext);  // this = context
-        String url = "http://zabeb.com/fetch.php";
+        String url = "http://zabeb.com/kzajeeh/fetch.php";
+
+        StringRequest postRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
+                        String jsonData = response;
+                        JSONObject Jobject = null;
+                        try {
+                            Jobject = new JSONObject(jsonData);
+                            listener.onSuccess(Jobject.getInt("status"));
+                            listener.onSuccess(objectjsonArray(Jobject));
+                        } catch (JSONException e1) {
+                            listener.onFailure(e1.getMessage());
+                            e1.printStackTrace();
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Log.d("Error.Response", String.valueOf(error.getMessage()));
+                        listener.onFailure("Error.Response");
+                    }
+                }
+        ) {
+
+
+
+        };
+        queue.getCache().initialize();
+        queue.add(postRequest);
+        queue.getCache().clear();
+
+        // prepare the Request
+
+    }
+    public void Post_fetchID(final Context mcontext,String url, final com.kh_sof_dev.kzajeeh.Request request, final OnCoupon_lisennter listener){
+        listener.onStart();
+        RequestQueue queue = Volley.newRequestQueue(mcontext);  // this = context
+//        String url = "http://zabeb.com/kzajeeh/fetch.php";
 
         StringRequest postRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>()
